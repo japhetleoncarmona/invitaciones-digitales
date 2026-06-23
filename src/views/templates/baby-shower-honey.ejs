@@ -27,6 +27,15 @@
             <img
                 src="../templates/baby-shower-honey/MIEL_HERO.png"
                 class="miel-hero">
+            <% if (event.music_url) { %>
+                <button class="music-hero-btn" id="musicBtn" type="button">
+                    <img class="icono_musica" src="/templates/baby-shower-honey/musica.png">
+                </button>
+
+                <audio id="bgMusic" loop>
+                    <source src="/<%= event.music_url %>" type="audio/mpeg">
+                </audio>
+            <% } %>
 
             <img class="nube nube1" src="/templates/baby-shower-honey/nube_rosa.png">
             <img class="nube nube2" src="/templates/baby-shower-honey/nube_azul.png">
@@ -233,7 +242,7 @@
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.444900245263!2d-99.0486912!3d19.3064914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce02faf5300bc5%3A0x760cf995e2c4030b!2s3ra.%20Cda.%20Gitana%20Nte.%20MZ76%20LT23%2C%20Santa%20Ana%20Poniente%2C%20Tl%C3%A1huac%2C%2013219%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1782153589273!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
 
-            <h3>📍 <%= event.address %></h3>
+            <h3><img class="ubic" src="/templates/baby-shower-honey/icon_ubicacion.png" alt=""> <%= event.address %></h3>
 
             <p class="event-info">
                 <%= new Date(event.event_date).toLocaleDateString('es-MX', {
@@ -486,6 +495,22 @@ rsvpFormSubmit.addEventListener("submit", async (e) => {
 closeThanksModal.addEventListener("click", () => {
     thanksModal.classList.remove("show");
 });
+</script>
+<script>
+const musicBtn = document.getElementById("musicBtn");
+const bgMusic = document.getElementById("bgMusic");
+
+if (musicBtn && bgMusic) {
+    musicBtn.addEventListener("click", () => {
+        if (bgMusic.paused) {
+            bgMusic.play();
+            musicBtn.textContent = "⏸︎";
+        } else {
+            bgMusic.pause();
+            musicBtn.textContent = "▶︎";
+        }
+    });
+}
 </script>
 </body>
 
