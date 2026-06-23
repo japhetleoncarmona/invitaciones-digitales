@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Editar Evento</title>
+
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+</head>
+
+<body class="bg-light">
+
+<div class="container py-5">
+
+    <div class="card">
+
+        <div class="card-body p-4">
+
+            <h1 class="mb-4">
+                Editar Evento
+            </h1>
+
+            <form
+                action="/admin/events/update/<%= event.id %>"
+                method="POST">
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Título
+                    </label>
+
+                    <input
+                        type="text"
+                        name="title"
+                        class="form-control"
+                        value="<%= event.title %>"
+                        required
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Slug
+                    </label>
+
+                    <input
+                        type="text"
+                        name="slug"
+                        class="form-control"
+                        value="<%= event.slug %>"
+                        required
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Tipo de Evento
+                    </label>
+
+                    <select
+                        name="event_type"
+                        class="form-select"
+                        value="<%= event.event_type %>"
+                    >
+                        <option value="xv">XV Años</option>
+                        <option value="boda">Boda</option>
+                        <option value="graduacion">Graduación</option>
+                        <option value="cumpleanos">Cumpleaños</option>
+                        <option value="baby shower">Baby Shower</option>
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Descripción
+                    </label>
+
+                    <textarea
+                        name="description"
+                        class="form-control"
+                        rows="4"
+                        value="<%= event.description %>"
+                    ></textarea>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Fecha
+                    </label>
+
+                    <input
+                        type="datetime-local"
+                        name="event_date"
+                        class="form-control"
+                        value="<%= event.event_date.toISOString().slice(0,16) %>"
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label class="form-label">
+                        Dirección
+                    </label>
+
+                    <textarea
+                        name="address"
+                        class="form-control"
+                        rows="3"
+                        value="<%= event.address %>"
+                    ></textarea>
+
+                </div>
+
+                <div class="mb-4">
+
+                    <label class="form-label">
+                        Google Maps
+                    </label>
+
+                    <input
+                        type="text"
+                        name="google_maps_url"
+                        class="form-control"
+                        value="<%= event.google_maps_url %>"
+                    >
+
+                </div>
+                <div class="mb-4">
+                    <label class="form-label">
+                        Música URL
+                    </label>
+
+                    <input
+                        type="text"
+                        name="music_url"
+                        class="form-control"
+                        value="<%= event.music_url || '' %>"
+                    >
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn btn-success"
+                >
+                    Guardar Evento
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

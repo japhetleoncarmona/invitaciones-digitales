@@ -1,0 +1,895 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Baskervville+SC:wght@400..700&family=Baskervville:ital,wght@0,400..700;1,400..700&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cinzel:wght@400..900&family=Oleo+Script:wght@400;700&family=Playfair+Display+SC:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+body{
+    margin:0;
+    background:#1f1f1f;
+    font-family:'Caudex', serif;
+}
+
+.invitation-wrapper{
+    width:100%;
+    max-width:430px;
+    margin:0 auto;
+    background:#f7ead8;
+    overflow:hidden;
+}
+
+.hero{
+    position:relative;
+    min-height:620px;
+    background:#f7ead8;
+    overflow:hidden;
+}
+
+.miel-hero{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+
+.nube{
+    position:absolute;
+    width:125px;
+}
+.nube1{
+    top:55px;
+    left:-45px;
+}
+
+.nube2{
+    top:40px;
+    left:75px;
+}
+
+.nube3{
+    top:65px;
+    left:210px;
+}
+
+.nube4{
+    top:45px;
+    right:-30px;
+}
+
+.nube5{
+    top:140px;
+    left:-20px;
+}
+
+.nube6{
+    top:120px;
+    left:117px;
+}
+
+.nube7{
+    top:140px;
+    right:50px;
+}
+
+.nube8{
+    top:120px;
+    right:-70px;
+}
+
+.nube9{
+    top:210px;
+    left:120px;
+}
+
+.nube10{
+    top:240px;
+    left:-30px;
+}
+.nube11{
+    top:200px;
+    left:370px;
+}
+
+.nube12{
+    top:235px;
+    left:255px;
+}
+
+.burrito{
+    position:absolute;
+    width:140px;
+    top:150px;
+    left:205px;
+}
+
+.oso{
+    position:absolute;
+    width:120px;
+    top:90px;
+    left:75px;
+}
+
+.rama{
+    position:absolute;
+    width:150px;
+    top:330px;
+    left:0;
+}
+
+.abejas{
+    position:absolute;
+    width:125px;
+    top:350px;
+    right:0px;
+}
+
+.hero-content{
+    position:absolute;
+    top:445px;
+    right:-20px;
+    width:100%;
+    text-align:center;
+    padding:0 30px;
+}
+
+.subtitle{
+    font-size:18px;
+    color:#34290786;
+    font-family: "Playfair Display", serif;
+    text-transform: uppercase;
+    font-weight:600;
+    margin-bottom:14px;
+}
+
+.hero-content h1{
+    position:relative;
+    top: 4px;
+    max-width:330px;
+    margin:0 auto;
+    font-family: "Caudex", serif;
+    font-weight:400;
+    font-size:35px;
+    line-height:1.0;
+    color:#8B6B4A;
+    text-shadow:0 4px 4px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+/*---------------------------
+    Animaciones hero
+----------------------------*/
+@keyframes floatMiel {
+
+    0% {
+        transform: translateY(-20px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+.miel-hero {
+    animation: floatMiel 1.8s ease-out both;
+}
+@keyframes floatCloud {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(12px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.nube {
+    animation: floatCloud 8s ease-in-out infinite;
+}
+
+.nube1 { animation-delay: 0s; }
+.nube2 { animation-delay: 1s; }
+.nube3 { animation-delay: 2s; }
+.nube4 { animation-delay: .5s; }
+.nube5 { animation-delay: 1.5s; }
+.nube6 { animation-delay: 2.5s; }
+.nube7 { animation-delay: 1s; }
+.nube8 { animation-delay: 2s; }
+.nube9 { animation-delay: 0s; }
+.nube10 { animation-delay: 1s; }
+.nube11 { animation-delay: 1.5s; }
+.nube12 { animation-delay: 2.5s; }
+
+@keyframes floatCharacter {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(1deg);
+    }
+
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.oso,
+.burrito {
+    animation: floatCharacter 5s ease-in-out infinite;
+}
+
+.burrito {
+    animation-delay: 1s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+.hero-content {
+    animation: fadeUp 1.2s ease-out both;
+    animation-delay: .4s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+/*---------------------------
+    Fin Animaciones hero
+----------------------------*/
+/*---------------------------
+    Estilos sección de papás
+----------------------------*/
+.parents-section{
+    position:relative;
+    padding:25px 25px 20px;
+    text-align:center;
+    background:#f7ead8;
+}
+
+.parents-section h2{
+   font-family: "Baskervville SC", serif;
+   font-weight: 400;
+    font-size:28px;
+    color:#34290758;
+    margin-bottom:5px;
+}
+
+.parents-section h3{
+    font-family:'Cinzel', serif;
+    font-weight: 400;
+    font-size:28px;
+    color:#000000;
+    letter-spacing:1px;
+    margin-bottom: 20px;
+}
+
+.parents-photo-wrap{
+    position:relative;
+    width:280px;
+    height:360px;
+    margin:0 auto 20px;
+    background-color: #3429074e;
+    border-radius: 67px;
+}
+
+.parents-photo{
+    position:absolute;
+    top:40px;
+    left: 30px;
+    width: 220px;
+    height: 273px;
+    object-fit:cover;
+    border-radius:20px;
+    z-index:1;
+}
+
+.parents-frame{
+    position:absolute;
+    inset:0;
+    top: 5px;
+    left: -30px;
+    width:125%;
+    height:100%;
+    z-index:2;
+    pointer-events:none;
+}
+
+.parents-caption{
+    max-width:350px;
+    font-family:"Baskervville", serif;
+    font-style: italic;
+    font-weight: 400;
+    margin:0 auto 0;
+    font-size:25px;
+    line-height:1.0;
+    color:#342907a7;
+}
+/*-------------------
+    SECCIÓN CONTEO
+---------------------*/
+
+.countdown-section{
+    background:#f7ead8;
+    text-align:center;
+    max-height: 400px;
+    padding:20px 25px 20px;
+}
+
+/* Abeja separadora */
+
+.abeja-separador{
+    position: relative;
+    top: -130px;
+    width:400px;
+    margin:0 auto 35px;
+}
+
+/* Fecha */
+
+.event-date{
+    display:flex;
+    position: relative;
+    top: -270px;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.day{
+
+    font-size:70px;
+    font-weight:400;
+    font-family: "Abril Fatface", serif;
+    line-height:1;
+    color:#7C6044;
+}
+
+.date-text{
+    text-align:left;
+}
+
+.date-text p{
+    margin:0;
+    margin-top: 20px;
+    font-size:18px;
+    font-family:"Baskervville", serif;
+    line-height: 0.5;
+    color:#7C6044;
+}
+
+.date-text h3{
+    margin:0;
+    font-family: "Playfair Display", serif;
+    font-size:25px;
+    font-weight:700;
+    color:#7C6044;
+}
+
+/* Título */
+
+.countdown-section h4{
+    margin:0 0 25px;
+    font-family: "Cinzel",serif;
+    font-size:18px;
+    font-weight:400;
+    color:#4a3624;
+}
+
+/* Contenedor */
+
+.countdown-card{
+    position: relative;
+    max-width:360px;
+    top: -275px;
+    margin:0 auto;
+}
+
+/* Barra superior */
+
+.count-numbers{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    
+
+    background:#b7aa92;
+
+    border-radius:12px;
+
+    padding:14px 0;
+
+    margin-bottom:10px;
+}
+
+.count-numbers span{
+    font-family: "Abril Fatface", serif;
+    font-size:24px;
+    font-weight:700;
+    color:#4a3624;
+}
+
+/* Barra inferior */
+
+.count-labels{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+
+    background:#9b8b6e;
+
+    border-radius:8px;
+
+    padding:4px 0;
+}
+
+.count-labels span{
+    color:#ffffff;
+    font-size:11px;
+    font-family: "Cinzel",serif;
+    letter-spacing:.5px;
+}
+
+.abeja-separador-abajo{
+    position: relative;
+    top: -270px;
+    width:400px;
+    margin:0 auto 35px;
+}
+
+/*-------------------
+    SECCIÓN ÉL O ELLA
+---------------------*/
+
+.gender-section{
+    background:#f7ead8;
+    text-align:center;
+    max-height: 350px;
+    padding:45px 25px 40px;
+}
+
+.gender-section h2{
+    position: relative;
+    margin:0 0 25px;
+    top: -40px;
+    font-family: "Oleo Script", system-ui;;
+    font-size:34px;
+    font-weight:700;
+}
+
+.gender-section h2 span:first-child{
+    color:#7ABEEA;
+    text-shadow:0 3px 4px rgba(0,0,0,.18);
+}
+
+.gender-section h2 span:last-child{
+    color:#F9A99A;
+    text-shadow:0 3px 4px rgba(0,0,0,.18);
+}
+
+.gender-section h2 small{
+    color:#4F3D2A;
+    font-family: "Playfair Display SC", serif;
+    font-weight: 700;
+    font-style: italic;
+    font-size:24px;
+    margin:0 8px;
+}
+
+.gender-clothes{
+    position: relative;
+    width:100%;
+    max-width:390px;
+    top: -90px;
+    display:block;
+    margin:0 auto 30px;
+}
+
+.gender-text{
+    position: relative;
+    top: -100px;
+    font-family: "Baskervville SC", serif;
+    color:#7C6044;
+    font-size:18px;
+    line-height:1.5;
+}
+
+.gender-text p{
+    margin:0;
+}
+.miel-divider{
+    display:block;
+    width:100%;
+    max-width:430px;
+    margin:0 auto;
+}
+/*--------------------
+    Seccion Carrusel
+----------------------*/
+.sweet-gallery-section{
+    background:#f7ead8;
+    text-align:center;
+    padding: 10px 25px 60px;
+    max-height: 470px;
+}
+
+.sweet-gallery-section h2{
+    font-family:"Cinzel", serif;
+    font-size:32px;
+    color:#6b513a;
+    margin-bottom:12px;
+}
+
+.sweet-gallery-section p{
+    max-width:330px;
+    font-family: "Baskervville SC", serif;
+    margin:0 auto 5px;
+    font-size:17px;
+    line-height:1.5;
+    color:#6b513a;
+}
+
+.custom-carousel{
+    position:relative;
+    width:320px;
+    height:410px;
+    margin:0 auto;
+}
+
+.carousel-photo{
+    position:absolute;
+    top:48px;
+    left:38px;
+    width:244px;
+    height:315px;
+    overflow:hidden;
+    border-radius:24px;
+    z-index:1;
+}
+
+.carousel-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.carousel-frame{
+    position:absolute;
+    top: -67px;
+    left: -13px;
+    width:110%;
+    height:137%;
+    z-index:2;
+    pointer-events:none;
+}
+
+.carousel-dots{
+    position: relative;
+    background-color: #b7aa92;
+    border-radius: 50px;
+    top: -80px;
+    left: 125px;
+    height: 20px;
+    width: 35%;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    gap:8px;
+    margin-top:18px;
+    z-index: 3;
+    box-shadow:2px 0 2px #3d2b1f;
+}
+
+.carousel-dots span{
+    width:9px;
+    height:9px;
+    border-radius:50%;
+    background:#c7b89d;
+}
+
+.carousel-dots span.active{
+    background:#7c6044;
+}
+
+.mini-divider{
+    width:140px;
+    height:4px;
+    background:#d9b26a;
+    border-radius:10px;
+    margin:40px auto;
+}
+/* Responsive */
+/* UBICACIÓN */
+
+.location-section,
+.rsvp-section{
+    background:#f7ead8;
+    text-align:center;
+    padding:35px 25px 45px;
+}
+
+.section-honey-divider{
+    display:block;
+    width:360px;
+    max-width:100%;
+    margin:0 auto 30px;
+}
+
+.location-section h2,
+.rsvp-section h2{
+    font-family:"Cinzel", serif;
+    font-weight: 600;
+    font-size:26px;
+    color:#4a3624;
+    margin:0 0 10px;
+}
+
+.location-intro,
+.rsvp-section p{
+    max-width:300px;
+    margin:0 auto 20px;
+    font-family: "Baskervville", serif;
+    font-weight: 500;
+    font-size:15px;
+    line-height:1.4;
+    color:#4a3624;
+}
+
+.map-card{
+    width:310px;
+    height:170px;
+    margin:20px auto;
+    border:5px solid #d5c1a3;
+    border-radius:18px;
+    overflow:hidden;
+    background:#eee;
+}
+
+.map-card iframe{
+    width:100%;
+    height:100%;
+    border:0;
+}
+
+.location-section h3{
+    font-size:18px;
+    font-weight: 600;
+    font-family: "Baskervville", serif;
+    color:#6b513a;
+    margin:15px 0 8px;
+}
+
+.event-info{
+    margin:0;
+    font-family: "cinzel",serif;
+    font-weight: 500;
+    font-size:15px;
+    color:#4a3624;
+}
+
+.btn-location,
+.btn-rsvp{
+    display:inline-block;
+    margin-top:15px;
+    padding:15px 28px;
+    border-radius:12px;
+    background:#8f7f60;
+    color:white;
+    font-family: "Baskervville SC", serif;
+    text-decoration:none;
+    font-size:14px;
+    font-weight: 500;
+    letter-spacing:.2px;
+}
+
+/* RSVP */
+
+.rsvp-section{
+    padding-top:25px;
+}
+
+.rsvp-section h3{
+    font-family:"Cinzel", serif;
+    font-size:30px;
+    font-weight:600;
+    color:#6b513a;
+    margin:5px 0 0;
+}
+
+.confirm-date,
+.thanks,
+.with-love{
+    margin-top:18px !important;
+}
+
+.btn-location,
+.btn-rsvp{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+}
+
+.btn-location img,
+.btn-rsvp img{
+    width:28px;
+    height:28px;
+    object-fit:contain;
+}
+
+.section-honey-divider{
+    display:block;
+    width:50px;
+    max-width:100%;
+    margin:0 auto 30px;
+}
+
+.mini-honey-divider{
+    display:block;
+    width:170px;
+    margin:20px auto;
+    opacity:.9;
+}
+
+/* divicion*/
+.divider-icon{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:15px;
+
+    margin:35px auto;
+}
+
+.divider-line{
+    flex:1;
+    max-width:120px;
+    height:2px;
+
+    background:linear-gradient(
+        to right,
+        transparent,
+        #d7b97a,
+        transparent
+    );
+}
+
+.divider-img{
+    width:40px;
+    height:auto;
+}
+
+/*---------------------
+    Animacion
+-----------------------*/
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:all .9s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+@media (max-width:430px){
+
+    .day{
+        font-size:72px;
+    }
+
+    .date-text h3{
+        font-size:16px;
+    }
+
+    .count-numbers span{
+        font-size:22px;
+    }
+
+}
+
+/*-------------
+  CONFIRMACION FORM 
+---------------*/
+.rsvp-form{
+    max-height:0;
+    overflow:hidden;
+
+    opacity:0;
+
+    transition:
+        max-height .6s ease,
+        opacity .4s ease;
+
+    max-width:350px;
+    margin:0 auto;
+}
+
+.rsvp-form.show{
+    max-height:700px;
+    opacity:1;
+    margin-top:25px;
+}
+.rsvp-form{
+    max-width:330px;
+    margin:25px auto 0;
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.rsvp-form input,
+.rsvp-form select,
+.rsvp-form textarea{
+    width:90%;
+    border:none;
+    border-radius:14px;
+    padding:13px 15px;
+    background:#fff7ec;
+    color:#4a3624;
+    font-family:"Caudex", serif;
+    box-shadow:0 6px 18px rgba(0,0,0,.06);
+    outline:none;
+}
+
+.rsvp-form button{
+    border:none;
+    border-radius:14px;
+    padding:13px;
+    background:#8f7f60;
+    color:white;
+    font-family:"Cinzel", serif;
+    letter-spacing:.5px;
+}
+
+.thanks-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+    z-index:9999;
+}
+
+.thanks-modal.show{
+    opacity:1;
+    visibility:visible;
+}
+
+.thanks-modal-card{
+    background:#f7ead8;
+    border-radius:24px;
+    padding:35px 25px;
+    max-width:330px;
+    text-align:center;
+    color:#4a3624;
+    box-shadow:0 20px 50px rgba(0,0,0,.25);
+}
+
+.thanks-modal-card h2{
+    font-family:"Caudex", serif;
+    margin-bottom:15px;
+}
+
+.thanks-modal-card button{
+    border:none;
+    background:#8f7f60;
+    color:white;
+    border-radius:12px;
+    padding:11px 28px;
+    margin-top:15px;
+}

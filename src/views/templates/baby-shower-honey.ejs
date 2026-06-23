@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title><%= event.title %></title>
+
+    <link
+        rel="stylesheet"
+        href="/css/baby-shower-honey.css">
+
+</head>
+
+<body>
+    <body>
+    <main class="invitation-wrapper">
+
+
+        <section class="hero">
+
+            <img
+                src="../templates/baby-shower-honey/MIEL_HERO.png"
+                class="miel-hero">
+
+            <img class="nube nube1" src="/templates/baby-shower-honey/nube_rosa.png">
+            <img class="nube nube2" src="/templates/baby-shower-honey/nube_azul.png">
+            <img class="nube nube3" src="/templates/baby-shower-honey/nube_rosa.png">
+            <img class="nube nube4" src="/templates/baby-shower-honey/nube_azul.png">
+            <img class="nube nube5" src="/templates/baby-shower-honey/nube_rosa.png">
+            <img class="nube nube6" src="/templates/baby-shower-honey/nube_azul.png">
+            <img class="nube nube7" src="/templates/baby-shower-honey/nube_rosa.png">
+            <img class="nube nube8" src="/templates/baby-shower-honey/nube_azul.png">
+            <img class="nube nube9" src="/templates/baby-shower-honey/nube_rosa.png">
+            <img class="nube nube10" src="/templates/baby-shower-honey/nube_azul.png">
+            <img class="nube nube11" src="/templates/baby-shower-honey/nube_rosa.png">
+            <img class="nube nube12" src="/templates/baby-shower-honey/nube_azul.png">
+            <img class="oso" src="/templates/baby-shower-honey/oso.png">
+            <img class="burrito" src="/templates/baby-shower-honey/burrito.png">
+            <img class="rama" src="/templates/baby-shower-honey/rama.png">
+            <img class="abejas" src="/templates/baby-shower-honey/abejas_hero.png">
+            <div class="hero-content">
+
+                <p class="subtitle" >
+                    <%=event.event_type%>
+                </p>
+
+                <h1>
+                    <%= event.title %>
+                </h1>
+
+            </div>
+
+        </section>
+        <section class="parents-section reveal">
+
+            <h2>Mis papis</h2>
+
+            <h3>Gerson & Jovita</h3>
+
+            <div class="parents-photo-wrap">
+
+                <img
+                    src="/templates/baby-shower-honey/marco_papas.png"
+                    class="parents-frame"
+                    alt="Marco papás"
+                >
+
+                <img
+                    src="/uploads/gallery/1781801101405.JPG"
+                    class="parents-photo"
+                    alt="Mis papás"
+                >
+
+            </div>
+
+            <p class="parents-caption">
+                "<%= event.description %>"
+            </p>
+
+        </section>
+        <section class="countdown-section reveal">
+
+            <img
+                src="/templates/baby-shower-honey/abeja_separacion_papa_fecha.png"
+                class="abeja-separador"
+                alt="Abeja separadora"
+            >
+
+            <div class="event-date">
+
+                <span class="day">4</span>
+
+                <div class="date-text">
+                    <p >Nos vemos este</p>
+                    <h3 >de Julio de 2026</h3>
+                </div>
+
+            </div>
+
+
+            <div class="countdown-card">
+                <h4>¿CUÁNTO FALTA?</h4>
+
+                <div class="count-numbers">
+                    <span id="days">00</span>
+                    <span id="hours">00</span>
+                    <span id="minutes">00</span>
+                    <span id="seconds">00</span>
+                </div>
+
+                <div class="count-labels">
+                    <span>DÍAS</span>
+                    <span>HORAS</span>
+                    <span>MINUTOS</span>
+                    <span>SEGUNDOS</span>
+                </div>
+
+            </div>
+
+            <img 
+                src="/templates/baby-shower-honey/abeja_final_conteo.png"
+                class="abeja-separador-abajo"
+                alt="Abeja separadora abajo"
+            >
+
+        </section>
+        <section class="gender-section reveal">
+
+            <h2>
+                <span>ÉL</span>
+                <small>o</small>
+                <span>ELLA</span>
+            </h2>
+
+            <img
+                src="/templates/baby-shower-honey/ropa_arbol.png"
+                class="gender-clothes"
+                alt="Él o Ella"
+            >
+
+            <div class="gender-text">
+                <p>Aún guardo</p>
+                <p>mi mayor secreto...</p>
+
+                <br>
+
+                <p>El secreto</p>
+                <p>de si seré niño o niña.</p>
+            </div>
+
+        </section>
+        <img
+            src="/templates/baby-shower-honey/separacion_miel.png"
+            class="miel-divider"
+            alt="Separador miel"
+        />
+        <section class="sweet-gallery-section reveal">
+
+            <h2>nuestra dulce espera</h2>
+
+            <p>
+                Cada fotografía guarda un pedacito
+                de esta hermosa historia.
+            </p>
+
+            <div class="custom-carousel">
+
+                <img
+                    src="/templates/baby-shower-honey/marco_carrusel.png"
+                    class="carousel-frame"
+                    alt="Marco carrusel"
+                >
+
+                <div class="carousel-photo">
+                    <% if (event.gallery && event.gallery.length > 0) { %>
+                    <img
+                        id="carouselImage"
+                        src="/<%= event.gallery[0].image_url %>"
+                        alt="Foto carrusel"
+                    >
+                    <% } else { %>
+
+                            <div class="empty-gallery">
+                                Sin fotos todavía
+                            </div>
+
+                    <% } %>
+                </div>
+
+            </div>
+
+            <div class="carousel-dots">
+                <% if (event.gallery && event.gallery.length > 0) { %>
+                    <% event.gallery.forEach((image, index) => { %>
+                        <span class="<%= index === 0 ? 'active' : '' %>"></span>
+                    <% }) %>
+                <% } %>
+            </div>
+
+        </section>
+        <!-- UBICACIÓN -->
+        <section class="location-section reveal">
+
+            <div class="divider-icon">
+
+                <span class="divider-line"></span>
+
+                <img
+                    src="/templates/baby-shower-honey/miel_sepacion.png"
+                    alt="Miel"
+                    class="divider-img"
+                >
+
+                <span class="divider-line"></span>
+
+            </div>
+
+
+            <h2>¿DÓNDE SERÁ?</h2>
+
+            <p class="location-intro">
+                Nos encantará compartir
+                este momento contigo.
+            </p>
+
+            <div class="map-card">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3765.444900245263!2d-99.0486912!3d19.3064914!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce02faf5300bc5%3A0x760cf995e2c4030b!2s3ra.%20Cda.%20Gitana%20Nte.%20MZ76%20LT23%2C%20Santa%20Ana%20Poniente%2C%20Tl%C3%A1huac%2C%2013219%20Ciudad%20de%20M%C3%A9xico%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1782153589273!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <h3>📍 <%= event.address %></h3>
+
+            <p class="event-info">
+                <%= new Date(event.event_date).toLocaleDateString('es-MX', {
+                    day:'numeric',
+                    month:'long',
+                    year:'numeric'
+                }) %>
+            </p>
+
+            <p class="event-info">
+                4:00 PM
+            </p>
+
+            <a class="btn-location" href="<%= event.google_maps_url %>" target="_blank">
+                <img src="/templates/baby-shower-honey/icon_ubicacion.png" alt="">
+                CÓMO LLEGAR
+            </a>
+
+        </section>
+        <!-- RSVP -->
+        <section class="rsvp-section reveal">
+
+            <div class="divider-icon">
+
+                <span class="divider-line"></span>
+
+                <img
+                    src="/templates/baby-shower-honey/miel_separacion_2.png"
+                    alt="Miel"
+                    class="divider-img"
+                >
+
+                <span class="divider-line"></span>
+
+            </div>
+
+            <h2>¿NOS ACOMPAÑAS?</h2>
+
+            <p>
+                Tu presencia hará este día
+                aún más especial.
+            </p>
+
+
+            <a class="btn-rsvp" href="#" id="btnOpenRsvp">
+                <img src="/templates/baby-shower-honey/icono_boton_rsvp.png" alt="">
+                CONFIRMAR ASISTENCIA
+            </a>
+                <form
+                    action="/rsvp"
+                    method="POST"
+                    class="rsvp-form"
+                    id="rsvpForm"
+                >
+
+                    <input type="hidden" name="event_id" value="<%= event.id %>">
+
+                    <input
+                        type="text"
+                        name="reservation_name"
+                        placeholder="Nombre o familia"
+                        required
+                    >
+
+                    <select name="status" required>
+                        <option value="">¿Asistirán?</option>
+                        <option value="confirmed">Sí asistiré</option>
+                        <option value="declined">No podré asistir</option>
+                    </select>
+
+                    <input
+                        type="number"
+                        min="1"
+                        value="1"
+                        name="attendees_count"
+                        placeholder="Cantidad de asistentes"
+                    >
+
+                    <textarea
+                        name="comments"
+                        rows="3"
+                        placeholder="Mensaje opcional"
+                    ></textarea>
+
+                    <button type="submit">
+                        ENVIAR CONFIRMACIÓN
+                    </button>
+
+                </form>
+
+            <p class="confirm-date">
+                Por favor confirma<br>
+                antes del 28 de junio.
+            </p>
+
+            <p class="thanks">
+                Gracias por formar parte<br>
+                de esta dulce espera.
+            </p>
+
+            <p class="with-love">
+                Con cariño,
+            </p>
+
+            <h3>Gerson & Jovita</h3>
+
+        </section>
+    </main>
+    <div class="thanks-modal" id="thanksModal">
+        <div class="thanks-modal-card">
+            <h2>¡Gracias por confirmar!</h2>
+            <p>
+                Tu respuesta fue registrada correctamente.
+                Gracias por ser parte de esta dulce espera.
+            </p>
+
+            <button id="closeThanksModal">
+                Cerrar
+            </button>
+        </div>
+    </div>
+<%
+const fechaEvento = new Date(event.event_date);
+%>
+<script>
+
+const targetDate = new Date(
+    <%= fechaEvento.getFullYear() %>,
+    <%= fechaEvento.getMonth() %>,
+    <%= fechaEvento.getDate() %>,
+    16,
+    0,
+    0
+).getTime();
+
+function updateCountdown(){
+
+    const now = Date.now();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("days").textContent = String(days).padStart(2,"0");
+    document.getElementById("hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("minutes").textContent = String(minutes).padStart(2,"0");
+    document.getElementById("seconds").textContent = String(seconds).padStart(2,"0");
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script> 
+<script>
+const galleryImages = [
+    <% if (event.gallery && event.gallery.length > 0) { %>
+        <% event.gallery.forEach(image => { %>
+            "/<%= image.image_url %>",
+        <% }) %>
+    <% } %>
+];
+
+let currentImage = 0;
+
+const carouselImage = document.getElementById("carouselImage");
+const dots = document.querySelectorAll(".carousel-dots span");
+
+function showImage(index){
+    if (!carouselImage || galleryImages.length === 0) return;
+
+    currentImage = index;
+
+    carouselImage.src = galleryImages[currentImage];
+
+    dots.forEach(dot => dot.classList.remove("active"));
+
+    if (dots[currentImage]) {
+        dots[currentImage].classList.add("active");
+    }
+}
+
+setInterval(() => {
+    if (galleryImages.length <= 1) return;
+
+    const nextImage = (currentImage + 1) % galleryImages.length;
+
+    showImage(nextImage);
+}, 8000);
+</script>
+<script>
+const revealElements = document.querySelectorAll(".reveal");
+
+function revealOnScroll(){
+    revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+
+        if(elementTop < window.innerHeight - 100){
+            element.classList.add("active");
+        }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+</script>
+<script>
+    const btnOpenRsvp = document.getElementById("btnOpenRsvp");
+    const rsvpForm = document.getElementById("rsvpForm");
+
+    btnOpenRsvp.addEventListener("click", (e) => {
+        e.preventDefault();
+
+        rsvpForm.classList.toggle("show");
+
+        if (rsvpForm.classList.contains("show")) {
+            setTimeout(() => {
+                rsvpForm.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center"
+                });
+            }, 300);
+        }
+    });
+</script>
+<script>
+const rsvpFormSubmit = document.getElementById("rsvpForm");
+const thanksModal = document.getElementById("thanksModal");
+const closeThanksModal = document.getElementById("closeThanksModal");
+
+rsvpFormSubmit.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(rsvpFormSubmit);
+
+    const response = await fetch("/rsvp", {
+        method: "POST",
+        body: new URLSearchParams(formData)
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+        thanksModal.classList.add("show");
+        rsvpFormSubmit.reset();
+        rsvpFormSubmit.classList.remove("show");
+    }
+});
+
+closeThanksModal.addEventListener("click", () => {
+    thanksModal.classList.remove("show");
+});
+</script>
+</body>
+
+</html>

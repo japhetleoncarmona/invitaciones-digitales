@@ -1,0 +1,65 @@
+<h1 class="mb-4">
+    Galería - <%= event.title %>
+</h1>
+
+<div class="card mb-4">
+
+    <div class="card-body">
+
+        <form
+            action="/admin/events/<%= event.id %>/gallery"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            <div class="mb-3">
+
+                <input
+                    type="file"
+                    name="image"
+                    class="form-control"
+                    required
+                >
+
+            </div>
+
+            <button
+                class="btn btn-primary"
+            >
+                Subir Imagen
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+<div class="card">
+    
+
+    <div class="card-body">
+
+        <p>
+            Aquí aparecerán las imágenes del evento.
+        </p>
+
+        <div class="row">
+
+            <% images.forEach(image => { %>
+
+                <div class="col-md-3 mb-3">
+
+                    <img
+                        src="/<%= image.image_url %>"
+                        class="img-fluid rounded"
+                    >
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    </div>
+
+</div>

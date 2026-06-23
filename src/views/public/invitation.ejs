@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title><%= event.title %></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+
+        :root{
+            --bg:#f5f5f7;
+            --card:#ffffff;
+            --text:#1d1d1f;
+            --secondary:#86868b;
+            --accent:#007aff;
+        }
+
+        body{
+            background:var(--bg);
+            color:var(--text);
+            font-family:-apple-system,
+            BlinkMacSystemFont,
+            "SF Pro Display",
+            "Segoe UI",
+            sans-serif;
+        }
+
+        .hero{
+            min-height:100vh;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+            padding:40px;
+        }
+
+        .hero-card{
+            background:rgba(255,255,255,.8);
+            backdrop-filter:blur(20px);
+            border-radius:32px;
+            padding:60px;
+            max-width:800px;
+            width:100%;
+            box-shadow:
+            0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .event-type{
+            color:var(--accent);
+            font-weight:600;
+            letter-spacing:1px;
+            text-transform:uppercase;
+            margin-bottom:20px;
+        }
+
+        .title{
+            font-size:4rem;
+            font-weight:700;
+        }
+
+        .date{
+            margin-top:25px;
+            color:var(--secondary);
+            font-size:1.2rem;
+        }
+
+        .description{
+            margin-top:35px;
+            font-size:1.1rem;
+            color:var(--secondary);
+            line-height:1.8;
+        }
+
+        .btn-ios{
+            margin-top:40px;
+            border:none;
+            border-radius:999px;
+            padding:15px 35px;
+            background:var(--accent);
+            color:white;
+            font-weight:600;
+            text-decoration:none;
+            display:inline-block;
+        }
+
+        .btn-ios:hover{
+            color:white;
+            opacity:.9;
+        }
+
+        @media(max-width:768px){
+
+            .hero-card{
+                padding:40px 25px;
+            }
+
+            .title{
+                font-size:2.5rem;
+            }
+
+        }
+        .countdown-section{
+            padding:100px 20px;
+            }
+
+            .section-label{
+                color:var(--accent);
+                font-weight:600;
+                text-transform:uppercase;
+                letter-spacing:1px;
+            }
+
+            .section-title{
+                font-size:2.5rem;
+                font-weight:700;
+            }
+
+            .countdown-grid{
+                display:grid;
+                grid-template-columns:repeat(4,1fr);
+                gap:20px;
+                max-width:900px;
+                margin:auto;
+            }
+
+            .countdown-card{
+                background:rgba(255,255,255,.85);
+                backdrop-filter:blur(20px);
+                border-radius:28px;
+                padding:35px 20px;
+                box-shadow:0 10px 30px rgba(0,0,0,.05);
+            }
+
+            .countdown-card span{
+                display:block;
+                font-size:3rem;
+                font-weight:700;
+            }
+
+            .countdown-card small{
+                color:var(--secondary);
+                font-size:1rem;
+            }
+
+            @media(max-width:768px){
+                .countdown-grid{
+                    grid-template-columns:repeat(2,1fr);
+                }
+
+                .section-title{
+                    font-size:2rem;
+                }
+
+                .countdown-card span{
+                    font-size:2.2rem;
+                }
+            }
+            .message-section{
+            padding:100px 20px;
+            }
+
+            .message-card{
+                max-width:900px;
+                margin:auto;
+                text-align:center;
+                background:white;
+                border-radius:32px;
+                padding:60px;
+                box-shadow:0 10px 30px rgba(0,0,0,.05);
+            }
+
+            .message-label{
+                color:var(--accent);
+                text-transform:uppercase;
+                letter-spacing:1px;
+                font-weight:600;
+            }
+
+            .message-card h2{
+                margin-top:20px;
+                font-size:2.5rem;
+                font-weight:700;
+            }
+
+            .message-card p:last-child{
+                margin-top:25px;
+                color:var(--secondary);
+                line-height:1.9;
+            }
+            .location-section{
+            padding:100px 20px;
+        }
+
+        .location-card{
+            max-width:900px;
+            margin:auto;
+            text-align:center;
+            background:white;
+            border-radius:32px;
+            padding:60px;
+            box-shadow:0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .location-label{
+            color:var(--accent);
+            text-transform:uppercase;
+            letter-spacing:1px;
+            font-weight:600;
+        }
+
+        .location-card h2{
+            margin-top:20px;
+            font-size:2.5rem;
+            font-weight:700;
+        }
+
+        .location-address{
+            margin-top:25px;
+            margin-bottom:35px;
+            color:var(--secondary);
+            font-size:1.1rem;
+        }
+        .rsvp-section{
+            padding:100px 20px;
+        }
+
+        .rsvp-card{
+            max-width:700px;
+            margin:auto;
+            background:white;
+            padding:60px;
+            border-radius:32px;
+            box-shadow:0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .rsvp-label{
+            text-align:center;
+            color:var(--accent);
+            font-weight:600;
+            text-transform:uppercase;
+        }
+
+        .rsvp-card h2{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .form-control,
+        .form-select{
+            border-radius:18px;
+            padding:14px;
+        }
+
+        .rsvp-card button{
+            width:100%;
+        }
+
+        .timeline-section{
+            padding:100px 20px;
+        }
+
+        .timeline-list{
+            max-width:800px;
+            margin:auto;
+        }
+
+        .timeline-item{
+            display:flex;
+            gap:25px;
+            background:white;
+            border-radius:28px;
+            padding:25px;
+            margin-bottom:20px;
+            box-shadow:0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .timeline-hour{
+            min-width:90px;
+            color:var(--accent);
+            font-weight:700;
+            font-size:1.2rem;
+        }
+
+        .timeline-content h4{
+            margin:0;
+            font-weight:700;
+        }
+
+        .timeline-content p{
+            margin:8px 0 0;
+            color:var(--secondary);
+        }
+
+        @media(max-width:768px){
+            .timeline-item{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .timeline-hour{
+                min-width:auto;
+            }
+        }
+
+        .gallery-section{
+            padding:100px 20px;
+        }
+
+        .gallery-grid{
+            max-width:1100px;
+            margin:auto;
+
+            display:grid;
+            grid-template-columns:
+                repeat(auto-fit,minmax(250px,1fr));
+
+            gap:20px;
+        }
+
+        .gallery-item{
+            overflow:hidden;
+            border-radius:28px;
+            box-shadow:
+                0 10px 30px rgba(0,0,0,.05);
+        }
+
+        .gallery-item img{
+            width:100%;
+            height:300px;
+            object-fit:cover;
+            display:block;
+        }
+        .music-btn{
+            position:fixed;
+            right:20px;
+            bottom:20px;
+            width:55px;
+            height:55px;
+            border-radius:50%;
+            border:none;
+            background:var(--accent);
+            color:white;
+            font-size:1.3rem;
+            box-shadow:0 10px 30px rgba(0,0,0,.15);
+            z-index:999;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <div class="hero-card">
+
+            <div class="event-type">
+                <%= event.event_type %>
+            </div>
+
+            <h1 class="title">
+                <%= event.title %>
+            </h1>
+
+            <div class="date">
+                <%= new Date(event.event_date).toLocaleDateString('es-MX',{
+                    day:'numeric',
+                    month:'long',
+                    year:'numeric'
+                }) %>
+            </div>
+
+            <div class="description">
+                <%= event.description %>
+            </div>
+
+            <a href="#rsvp" class="btn-ios">
+                Confirmar asistencia
+            </a>
+
+        </div>
+
+    </section>
+    <section class="countdown-section" id="countdown">
+        <div class="container text-center">
+
+            <p class="section-label">Cuenta regresiva</p>
+
+            <h2 class="section-title">
+                Cada segundo nos acerca más
+            </h2>
+
+            <div class="countdown-grid mt-5">
+                <div class="countdown-card">
+                    <span id="days">00</span>
+                    <small>Días</small>
+                </div>
+
+                <div class="countdown-card">
+                    <span id="hours">00</span>
+                    <small>Horas</small>
+                </div>
+
+                <div class="countdown-card">
+                    <span id="minutes">00</span>
+                    <small>Minutos</small>
+                </div>
+
+                <div class="countdown-card">
+                    <span id="seconds">00</span>
+                    <small>Segundos</small>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <section class="message-section">
+
+    <div class="container">
+
+        <div class="message-card">
+
+            <p class="message-label">
+                Un día especial
+            </p>
+
+            <h2>
+                Nos encantaría compartir este momento contigo
+            </h2>
+
+            <p>
+                La vida está llena de momentos inolvidables y este será uno de ellos.
+                Gracias por formar parte de nuestra historia y acompañarnos en esta celebración tan especial.
+            </p>
+
+        </div>
+
+    </div>
+
+<section class="timeline-section">
+
+    <div class="container">
+
+        <p class="section-label text-center">
+            Cronograma
+        </p>
+
+        <h2 class="section-title text-center mb-5">
+            Así viviremos este día
+        </h2>
+
+        <div class="timeline-list">
+
+            <% if (event.timelines && event.timelines.length > 0) { %>
+
+                <% event.timelines.forEach(item => { %>
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-hour">
+                            <%= item.hour %>
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h4>
+                                <%= item.title %>
+                            </h4>
+
+                            <p>
+                                <%= item.description || '' %>
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                <% }) %>
+
+            <% } else { %>
+
+                <p class="text-center text-muted">
+                    Cronograma próximamente.
+                </p>
+
+            <% } %>
+
+        </div>
+
+    </div>
+
+</section>
+
+</section>
+<section class="location-section">
+
+    <div class="container">
+
+        <div class="location-card">
+
+            <p class="location-label">
+                Ubicación
+            </p>
+
+            <h2>
+                Te esperamos
+            </h2>
+
+            <p class="location-address">
+                <%= event.address %>
+            </p>
+
+            <a
+                href="<%= event.google_maps_url %>"
+                target="_blank"
+                class="btn-ios"
+            >
+                Abrir en Google Maps
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="gallery-section">
+
+    <div class="container">
+
+        <p class="section-label text-center">
+            Galería
+        </p>
+
+        <h2 class="section-title text-center mb-5">
+            Nuestra Historia
+        </h2>
+
+        <div class="gallery-grid">
+
+            <% if (event.gallery && event.gallery.length > 0) { %>
+
+                <% event.gallery.forEach(image => { %>
+
+                    <div class="gallery-item">
+
+                        <img
+                            src="/<%= image.image_url %>"
+                            alt="Foto"
+                        >
+
+                    </div>
+
+                <% }) %>
+
+            <% } %>
+
+        </div>
+
+    </div>
+
+</section>
+<section id="rsvp" class="rsvp-section">
+
+    <div class="container">
+
+        <div class="rsvp-card">
+
+            <p class="rsvp-label">
+                Confirmación
+            </p>
+
+            <h2>
+                Confirma tu asistencia
+            </h2>
+
+            <form action="/rsvp" method="POST">
+
+                <input
+                    type="hidden"
+                    name="event_id"
+                    value="<%= event.id %>"
+                >
+
+                <div class="mb-3">
+
+                    <input
+                        type="text"
+                        name="reservation_name"
+                        class="form-control"
+                        placeholder="Nombre o familia"
+                        required
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <input
+                        type="email"
+                        name="email"
+                        class="form-control"
+                        placeholder="Correo (opcional)"
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <input
+                        type="text"
+                        name="phone"
+                        class="form-control"
+                        placeholder="Teléfono (opcional)"
+                    >
+
+                </div>
+
+                <div class="mb-3">
+
+                    <select
+                        name="status"
+                        class="form-select"
+                        required
+                    >
+                        <option value="">
+                            ¿Asistirán?
+                        </option>
+
+                        <option value="confirmed">
+                            Sí asistiré
+                        </option>
+
+                        <option value="declined">
+                            No podré asistir
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="mb-3">
+
+                    <input
+                        type="number"
+                        min="1"
+                        value="1"
+                        name="attendees_count"
+                        class="form-control"
+                        placeholder="Cantidad de asistentes"
+                    >
+
+                </div>
+
+                <div class="mb-4">
+
+                    <textarea
+                        name="comments"
+                        rows="4"
+                        class="form-control"
+                        placeholder="Comentarios"
+                    ></textarea>
+
+                </div>
+
+                <button
+                    type="submit"
+                    class="btn-ios"
+                >
+                    Confirmar asistencia
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+<% if (event.music_url) { %>
+    <audio id="bgMusic" src="/<%= event.music_url %>" loop></audio>
+
+    <button class="music-btn" onclick="toggleMusic()">
+        🎵
+    </button>
+
+    <script>
+        const music = document.getElementById('bgMusic');
+
+        function toggleMusic() {
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+    </script>
+<% } %>
+    <script>
+        const eventDate = new Date("<%= event.event_date.toISOString() %>").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            if (distance <= 0) {
+                document.getElementById('days').textContent = '00';
+                document.getElementById('hours').textContent = '00';
+                document.getElementById('minutes').textContent = '00';
+                document.getElementById('seconds').textContent = '00';
+                return;
+            }
+
+            document.getElementById('days').textContent =
+                Math.floor(distance / (1000 * 60 * 60 * 24));
+
+            document.getElementById('hours').textContent =
+                Math.floor((distance / (1000 * 60 * 60)) % 24);
+
+            document.getElementById('minutes').textContent =
+                Math.floor((distance / (1000 * 60)) % 60);
+
+            document.getElementById('seconds').textContent =
+                Math.floor((distance / 1000) % 60);
+        }
+
+        updateCountdown();
+        setInterval(updateCountdown, 1000);
+    </script>
+    
+</body>
+</html>
