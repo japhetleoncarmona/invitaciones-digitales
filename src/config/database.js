@@ -9,7 +9,10 @@ const sequelize = new Sequelize(
         host: process.env.DB_HOST, // Host de la base de datos
         port: process.env.DB_PORT, // Puerto de la base de datos
         dialect: 'mysql',          // Tipo de base de datos (MySQL en este caso)
-        logging: false             // Desactiva los logs de Sequelize para evitar mostrar consultas SQL en la consola
+                logging: false,
+        dialectOptions: {
+            connectTimeout: 60000
+        }             // Desactiva los logs de Sequelize para evitar mostrar consultas SQL en la consola
     }
 );
 
