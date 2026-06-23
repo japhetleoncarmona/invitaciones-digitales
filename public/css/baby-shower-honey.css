@@ -614,13 +614,13 @@ body{
 
 @media (max-width: 400px){
     .carousel-dots{
-        left: 100px;
+        left: 105px;
     }
 }
 
 @media (max-width: 360px){
     .carousel-dots{
-        left: 85px;
+        left: 100px;
     }
 }
 
