@@ -612,6 +612,18 @@ body{
     box-shadow:2px 0 2px #3d2b1f;
 }
 
+@media (max-width: 400px){
+    .carousel-dots{
+        left: 100px;
+    }
+}
+
+@media (max-width: 360px){
+    .carousel-dots{
+        left: 85px;
+    }
+}
+
 .carousel-dots span{
     width:9px;
     height:9px;
