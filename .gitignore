@@ -14,6 +14,3 @@ Thumbs.db
 
 # VS Code
 .vscode/
-
-# Sequelize
-sequelize-meta.json
