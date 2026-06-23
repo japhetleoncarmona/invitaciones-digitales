@@ -781,21 +781,7 @@ body{
     opacity:1;
     transform:translateY(0);
 }
-@media (max-width:430px){
 
-    .day{
-        font-size:72px;
-    }
-
-    .date-text h3{
-        font-size:16px;
-    }
-
-    .count-numbers span{
-        font-size:22px;
-    }
-
-}
 
 /*-------------
   CONFIRMACION FORM 
