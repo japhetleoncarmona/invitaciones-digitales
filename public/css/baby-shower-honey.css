@@ -612,7 +612,7 @@ body{
     box-shadow:2px 0 2px #3d2b1f;
 }
 
-@media (max-width: 400px){
+@media (max-width: 390px){
     .carousel-dots{
         left: 105px;
     }
