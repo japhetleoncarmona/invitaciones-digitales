@@ -29,7 +29,7 @@ const dashboard = async (req, res) => {
             order: [
                 ['created_at', 'DESC']
             ],
-            limit: 10
+            limit: 100
         });
 
         res.render(
